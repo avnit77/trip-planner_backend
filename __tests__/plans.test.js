@@ -29,7 +29,9 @@ describe('plan routes', () => {
     plan = await Plan.create([
       {
         tripId: trip._id,
-        activity: 'bowling'
+        activity: 'bowling',
+        city: 'Oaxaca',
+        woeid: 12345
       }
     ]);
   });
@@ -43,13 +45,17 @@ describe('plan routes', () => {
       .post('/api/v1/plans')
       .send({
         tripId: trip._id,
-        activity: 'bowling'
+        activity: 'bowling',
+        city: 'Oaxaca',
+        woeid: 12345
       })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           tripId: trip._id.toString(),
           activity: 'bowling',
+          city: 'Oaxaca',
+          woeid: 12345,
           __v: 0
         });
       });

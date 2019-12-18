@@ -40,11 +40,15 @@ describe('trip routes', () => {
     plan = await Plan.create([
       {
         tripId: trip._id,
-        activity: 'bowling'
+        activity: 'bowling',
+        city: 'Oaxaca',
+        woeid: 12345
       },
       {
         tripId: trip._id,
-        activity: 'fancy dinner'
+        activity: 'fancy dinner',
+        city: 'Oaxaca',
+        woeid: 12345
       },
     ]);
   });
